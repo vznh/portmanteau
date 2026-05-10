@@ -70,6 +70,12 @@ enum Sanitize {
         return Result(original: text, cleaned: cleaned, changes: changes.reversed())
     }
 
+    /// True if the URL's host equals any of `domains` or is a subdomain of one.
+    static func hostMatches(_ components: URLComponents, _ domains: String...) -> Bool {
+        let host = components.host?.lowercased() ?? ""
+        return domains.contains { host == $0 || host.hasSuffix("." + $0) }
+    }
+
     /// Drops query items whose name matches `predicate`; rebuilds components.
     static func strip(_ components: URLComponents, where predicate: (String) -> Bool) -> Step {
         guard var items = components.queryItems else {
