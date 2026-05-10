@@ -97,5 +97,6 @@ extension Sanitize.Rule {
     /// Default rule set. Configurability lands when settings UI does — filter this list by `id`.
     static let defaults: [Sanitize.Rule] = [
         .utm, .facebook, .google, .microsoft, .mailchimp, .yandex, .instagram, .twitter,
+        .youtube, .tiktok, .linkedin, .reddit, .amazon, .hubspot, .marketo, .klaviyo, .referrer,
     ]
 }
