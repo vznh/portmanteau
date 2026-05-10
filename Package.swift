@@ -2,17 +2,17 @@
 import PackageDescription
 
 let package = Package(
-    name: "Sanitizer",
+    name: "Portmanteau",
     platforms: [.macOS(.v14)],
     targets: [
         .executableTarget(
-            name: "Sanitizer",
-            path: "Sources/Sanitizer"
+            name: "Portmanteau",
+            path: "Sources/Portmanteau"
         ),
         .testTarget(
-            name: "SanitizerTests",
-            dependencies: ["Sanitizer"],
-            path: "Tests/SanitizerTests"
+            name: "PortmanteauTests",
+            dependencies: ["Portmanteau"],
+            path: "Tests/PortmanteauTests"
         ),
     ]
 )
